@@ -38,3 +38,19 @@ Global means something that is not inside a function.
 There is a thing such as the outer environment,
 however, for the global context that is null, 
 because you're as outside as you can be.
+
+**Single threaded** - JS is single threaded from the point of view of programmers.
+It might not be executing with a single thread under the hood of the browser, though.
+
+**Synchronous** - one at a time and in order.
+
+Javascript is single-threaded and synchronous in its behavior.
+
+Calling a function creates a new entry in the execution stack, it goes to the top.
+The new stack entry will have its own variables and whatnot. It goes through the same
+create and execute phases, but inside of that function. If we have another function,
+then it'll stop, go into that and start another execution context. Every function
+creates a new execution phase. Once the function execution ends, then the context
+is popped off the stack.
+
+![diagram](execution-stack.JPG)

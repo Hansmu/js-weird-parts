@@ -20,7 +20,7 @@ console.log(variableDeclaredAfterItIsCalled);
 /*
 * The above behavior happens because Javascript code is executed in two phases.
 *   1) The creation phase.
-*   The global object, this and other environment are present there. It goes through the code and
+*   The global object, this and outer environment are created there. It goes through the code and
 *   sets up the memory space for variables and functions. This is called "hoisting". Code isn't physically moved, just the space
 *   is set aside. The function in its entirety is placed in the memory space, that's why they're not undefined before they're called.
 *   With variables the compiler doesn't know what the variable will be yet. It gives it a placeholder called undefined and an actual
