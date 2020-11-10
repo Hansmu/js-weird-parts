@@ -27,7 +27,7 @@ console.log(variableDeclaredAfterItIsCalled);
 *   value is set when the code is actually executed.
 *
 *   2) Execution phase.
-*
+*   Runs the code line by line again from the start, but this time assigning variables values and processing functions.
 * */
 
 function firstGlobalFunction() {
