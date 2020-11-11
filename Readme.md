@@ -54,3 +54,27 @@ creates a new execution phase. Once the function execution ends, then the contex
 is popped off the stack.
 
 ![diagram](execution-stack.JPG)
+
+**Variable environment** - where the variables live and how they related to each other
+in memory. Each execution context gets its own variable environment.
+
+![diagram](variable-env.JPG)
+
+Every execution context has a reference to its outer environment. The outer environment
+depends on where the function sits lexically. When a function cannot find a variable
+inside of its variable environment, then it turns to the outer environment. The
+execution context depends on where the function is called, but the outer environment
+looks at where the code was written. The outer environment search is a chained operation.
+It keeps going through the outer environments, trying to find a declared variable.
+So if you have functions defined inside of functions, then it chains all the way up
+trying to find the variable definition.
+
+When the functions are declared on the same global level, then the scope chain looks 
+like this.
+
+![diagram](global-scope-chain.JPG)
+
+However, when the functions are defined within each other. That is, the definition of
+b is written inside of a, then the outer environment reference for b becomes a.
+
+![diagram](nested-scope-chain.JPG)

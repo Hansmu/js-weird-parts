@@ -35,3 +35,34 @@ function firstGlobalFunction() {
 }
 
 var variableDeclaredAfterItIsCalled = 'some variable';
+
+console.log('--------------------------SCOPE---------------------------------');
+
+/*Lexically this sits on the global object as it is defined on the highest level. It might be called inside of A, but
+the code is still defined on the global level.
+* */
+function scopeB() {
+    console.log('Scope B var', scopeVar);
+}
+
+function scopeA() {
+    /*This function doesn't get defined on the outer environment, though, so you can't call it in the global level, because
+    the execution context of the outer environment does not look inside of functions, it just sees that a function is defined
+    and keeps going until the execution phase starts, in which it gets invoked. On invokation a new execution context is created
+    and in that the function within is defined.
+    * */
+    function lexicalEnvironmentInScopeA() {
+        console.log('Lexical environment in scope A', scopeVar);
+        console.log('Lexical environemnt in scope A, but the outer environment chains all the way up to the global context', scopingAllTheWayUpTheChainToTheGlobalContext);
+    }
+
+    var scopeVar = 2;
+    console.log('Scope A var', scopeVar)
+    scopeB();
+    lexicalEnvironmentInScopeA();
+}
+
+var scopeVar = 1;
+var scopingAllTheWayUpTheChainToTheGlobalContext = 1337;
+console.log('Scope var', scopeVar)
+scopeA();
