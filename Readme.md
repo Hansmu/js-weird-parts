@@ -69,6 +69,9 @@ It keeps going through the outer environments, trying to find a declared variabl
 So if you have functions defined inside of functions, then it chains all the way up
 trying to find the variable definition.
 
+**Scope** - where a variable is available in your code and if it's truly the same variable
+or a new copy.
+
 When the functions are declared on the same global level, then the scope chain looks 
 like this.
 

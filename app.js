@@ -1,4 +1,4 @@
-/* let and var are not attached to the window object when at the global context level, but var does. */
+/* let and const are not attached to the window object when at the global context level, but var does. */
 let letVariable = 'I am changable, but not attached to the window.';
 const constVariable = 'I am constant, but not attached to the window.';
 var firstGlobalVariable = 'I am a variable and I am on the window';
@@ -66,3 +66,15 @@ var scopeVar = 1;
 var scopingAllTheWayUpTheChainToTheGlobalContext = 1337;
 console.log('Scope var', scopeVar)
 scopeA();
+
+console.log('-------------------------BLOCK SCOPED----------------------------')
+/* let and const are block scoped, while var isn't
+* */
+// console.log('Accessing all three:', blockedVar, blockedLet, blockedConst); //This line produces an error because blockedLet and blockedConst are not defined.
+if (true) {
+    let blockedLet = 'Some var';
+    const blockedConst = 'Some other const';
+    var blockedVar = 'Blocked var';
+}
+console.log('Accessing blocked var: ', blockedVar); // This, however, works, as var is not block scoped.
+// console.log('Accessing all three:', blockedVar, blockedLet, blockedConst); //This line also produces an error because blockedLet and blockedConst are not defined.
