@@ -78,3 +78,23 @@ if (true) {
 }
 console.log('Accessing blocked var: ', blockedVar); // This, however, works, as var is not block scoped.
 // console.log('Accessing all three:', blockedVar, blockedLet, blockedConst); //This line also produces an error because blockedLet and blockedConst are not defined.
+
+
+console.log('----------------ASYNCHRONOUS----------------');
+function waitThreeSeconds() {
+    const ms = 3000 + new Date().getTime();
+    while(new Date() < ms) {}
+    console.log('Finished function');
+}
+
+function clickHandler() {
+    console.log('Click event');
+}
+
+document.addEventListener('click', clickHandler);
+/* The click events get queued, when clicking while this is still running
+* This is because the execution stack isn't empty, so the queue isn't being processed. Once the execution stack is empty,
+* then the click event listener gets notified of the queued click events and the clickHandler code gets run.
+* */
+waitThreeSeconds();
+console.log('Finished execution')

@@ -81,3 +81,18 @@ However, when the functions are defined within each other. That is, the definiti
 b is written inside of a, then the outer environment reference for b becomes a.
 
 ![diagram](nested-scope-chain.JPG)
+
+**Asnychronous** - more than one at a time.
+
+While Javascript is synchronous, then it's running in an asynchronous environment, which
+is the browser. JS has hooks to talk to the rendering engine, to send HTTP Requests etc.
+There is such a thing as the event queue. The Javascript engine looks at the event queue
+when the execution stack is empty. If there's something there, then the JS engine looks
+if any particular function is listening to the event and if it should be run.
+**Event queue isn't accessed unless the execution stack is empty**. So the JS code 
+is still synchronous, it simply handles asynchronous actions in a synchronous manner.
+Any events that happen outside of the engine gets placed in the event queue, and if the
+execution stack is empty, then it processes those events. It'll process those events
+in the order they appeared in. So if the click event's first and then the HTTP request
+event, then the click event gets handled first and then the HTTP request.
+![diagram](event-queue.png)
