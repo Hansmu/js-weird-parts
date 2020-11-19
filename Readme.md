@@ -96,3 +96,36 @@ execution stack is empty, then it processes those events. It'll process those ev
 in the order they appeared in. So if the click event's first and then the HTTP request
 event, then the click event gets handled first and then the HTTP request.
 ![diagram](event-queue.png)
+
+**Dynamic typing** - you don't tell the engine what type of data a variable holds,
+it figures it out while your code is running. Variables can hold different types of
+values because it's all figured out during execution.
+
+**Primitive type** - a type of data that represents a single value. That is, not an object.
+* Undefined - represents lack of existence (you shouldn't set a variable to this)
+* Null - represents lack of existence (you can set a variable to this)
+* Boolean - true or false
+* Number - floating point number (there's always some decimals). JS has only one 'number' type.
+* String - a sequence of characters.
+* Symbol - Used in ES6.
+
+**Operator** - a special function that is syntactically (written) differently. 
+Generally, operators take two parameters and return one result.
+
+`3 + 4` - infix notation
+
+`3 4+` - postfix notation
+
+`+3 4` - prefix notation
+
+**Operator associativity** - what order operator functions get called in, either
+left-to-right or right-to-left, that is, when functions have the same precedence.
+
+**Coercion** - converting a value from one type to another. Happens quite often in JS
+as it's dynamically typed. Operators try to apply coercion to be able to do the 
+operation. Ex. 3 < 2 < 1. First 3 < 2 gets evaluated, coming to false with the next
+part being false < 1. Then it tries to coerce the false value to a number, which is 0.
+So 0 < 1. Different operators coerce values differently.
+
+An if block in Javascript does type coercion, that's why numbers can be used in there
+and such.
