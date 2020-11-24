@@ -129,3 +129,19 @@ So 0 < 1. Different operators coerce values differently.
 
 An if block in Javascript does type coercion, that's why numbers can be used in there
 and such.
+
+**Namespace** - a container for variables and functions. Typically to keep variables and 
+functions with the same name separate. They don't exist in JS. Can use an object
+wrapper in JS to do the same thing.
+
+**First class functions** - everything you can do with other types you can do with 
+functions. Assign them to variables, pass them around, create them on the fly.
+**Function is a special type of object**. It has two hidden properties. Name, which
+is optional, as the function can be anonymous. Code, which is invocable with "()".
+Meaning run this code. Additionally, you can attach whatever type of variables you 
+want to greet, same as you would with an object literal.
+
+**Expression** - a unit of code that results in a value. It doesn't have to save
+to a variable. A **statement**, however, does not return, just does work. Ex an 
+`if` or a function declaration, which is named. An anonymous function is an expression
+as it returns the function declaration.

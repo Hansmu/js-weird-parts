@@ -98,3 +98,15 @@ document.addEventListener('click', clickHandler);
 * */
 waitThreeSeconds();
 console.log('Finished execution')
+
+console.log('-----------------------OBJECT FUNCTION EXAMPLE-------------------------');
+function objectFunctionExample() {
+    console.log('hi');
+}
+
+// Can attach a property to the method as well.
+objectFunctionExample.language = 'english';
+
+console.log(objectFunctionExample);
+console.log(objectFunctionExample.language);
+console.log('----------------------------END OF OBJECT FUNCTION EXAMPLE--------------------');
