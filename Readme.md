@@ -145,3 +145,7 @@ want to greet, same as you would with an object literal.
 to a variable. A **statement**, however, does not return, just does work. Ex an 
 `if` or a function declaration, which is named. An anonymous function is an expression
 as it returns the function declaration.
+
+Primitive values are passed by value, that means that a copy of the variable is
+created when a variable refers to it. Objects are by reference, that means that
+each variable gets a reference to the variable, instead of getting a copy.

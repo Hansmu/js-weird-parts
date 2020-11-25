@@ -110,3 +110,36 @@ objectFunctionExample.language = 'english';
 console.log(objectFunctionExample);
 console.log(objectFunctionExample.language);
 console.log('----------------------------END OF OBJECT FUNCTION EXAMPLE--------------------');
+
+console.log('--------------------THIS EXAMPLE--------------------------------');
+
+console.log('Global this', this); // this refers to the window object in a browser.
+function functionThisExample() {
+    console.log('Inside the function this', this);
+}
+
+functionThisExample(); // Still refers to the global object.
+
+const objectThisExample = {
+    name: 'The object',
+    log: function() {
+        // The way to fix the bug and make sure that the this reference is correct is to use a separate variable, which
+        // gets a reference to self. So inside of the nested function you'd use the self reference. In fact, for sanity's sake
+        // it's better to just use self everywhere inside of the function.
+        const self = this;
+
+        console.log('Inside of object this', this); // refers to the object that it is in
+
+        function nestedFunction() {
+            console.log('Nested inside of object this', this);
+            console.log('Nested inside self', self);
+        }
+
+        nestedFunction(); // A lot of people think that this is a bug in JS. The nested function inside of a function
+        //refers to the global object, instead of the current object
+    }
+};
+
+objectThisExample.log();
+
+console.log('--------------------END OF THIS EXAMPLE--------------------------------');
