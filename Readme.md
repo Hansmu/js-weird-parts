@@ -149,3 +149,8 @@ as it returns the function declaration.
 Primitive values are passed by value, that means that a copy of the variable is
 created when a variable refers to it. Objects are by reference, that means that
 each variable gets a reference to the variable, instead of getting a copy.
+
+When an execution context is created for a function, then in addition to the
+variable environment, this, outer environment, the function also gets an 
+arguments property. The arguments variables refers the the arguments that have
+been given to the function.

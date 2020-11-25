@@ -151,3 +151,24 @@ const arr = [
 arr[0]();
 
 console.log('--------------------END OF THIS EXAMPLE--------------------------------');
+
+console.log('------------------START ARGUMENTS FOR A FUNCTION-----------------');
+
+function argsExample(firstName, secondVar, someOtherVar) {
+    console.log(arguments); // It's array-like, not actually an array. It behaves enough like an array, but doesn't
+    // have all of the properties.
+}
+
+argsExample();
+argsExample('potato', 'biscuits');
+argsExample('potato', 'biscuits', 'tomankloes');
+argsExample('potato', 'biscuits', 'tomankloes', 'more values than accepted');
+
+// arguments, however, is deprecated, the better way to take an X number of parameters is the spread operator.
+function argsNParams(firstName, ...restOfTheParams) {
+    console.log(firstName, restOfTheParams);
+}
+
+argsNParams('Tommy', 'John', 2, 3, 11);
+
+console.log('------------------END OF ARGUMENTS FOR A FUNCTION-----------------');
