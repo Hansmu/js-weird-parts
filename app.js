@@ -142,4 +142,12 @@ const objectThisExample = {
 
 objectThisExample.log();
 
+const arr = [
+    function() {
+        console.log('Array this', this); // References the array.
+    }
+];
+
+arr[0]();
+
 console.log('--------------------END OF THIS EXAMPLE--------------------------------');
