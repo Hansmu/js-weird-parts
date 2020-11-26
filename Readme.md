@@ -160,3 +160,6 @@ end of a line. The parser looks at it and decides whether or not you are allowed
 to start a new line from that. If you aren't allowed to go to the next line with
 a particular syntax, then it goes ahead and inserts a semicolon at the end of that line.
 For example: `return` gets a semicolon if you enter a new line after writing it.
+
+**Immediately invoked function expression (IIFE)** - creating a function and then
+calling it where you created it. `function(name) {console.log('Hello ' + name);}()`
