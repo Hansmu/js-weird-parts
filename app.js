@@ -172,3 +172,16 @@ function argsNParams(firstName, ...restOfTheParams) {
 argsNParams('Tommy', 'John', 2, 3, 11);
 
 console.log('------------------END OF ARGUMENTS FOR A FUNCTION-----------------');
+
+console.log('------------AUTOMATIC SEMI COLON INSERTION STARTS------------');
+
+function automaticInsertion() {
+    return // Automatically inserts a semi-colon after this return as there's a new line, so it won't return an object.
+    {
+        firstName: 'Bobbert'
+    }
+}
+
+console.log(automaticInsertion())
+
+console.log('------------AUTOMATIC SEMI COLON INSERTION ENDS------------');

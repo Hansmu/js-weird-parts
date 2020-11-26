@@ -154,3 +154,9 @@ When an execution context is created for a function, then in addition to the
 variable environment, this, outer environment, the function also gets an 
 arguments property. The arguments variables refers the the arguments that have
 been given to the function.
+
+Semicolons are optional in Javascript. A new-line character is entered at the
+end of a line. The parser looks at it and decides whether or not you are allowed
+to start a new line from that. If you aren't allowed to go to the next line with
+a particular syntax, then it goes ahead and inserts a semicolon at the end of that line.
+For example: `return` gets a semicolon if you enter a new line after writing it.
