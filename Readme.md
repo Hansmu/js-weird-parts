@@ -163,3 +163,5 @@ For example: `return` gets a semicolon if you enter a new line after writing it.
 
 **Immediately invoked function expression (IIFE)** - creating a function and then
 calling it where you created it. `function(name) {console.log('Hello ' + name);}()`
+This is useful with frameworks, as you'd make sure that your code doesn't accidentally
+set your variables on the global object, thus avoiding accidental collisions.
