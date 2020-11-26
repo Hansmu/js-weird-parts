@@ -185,3 +185,15 @@ function automaticInsertion() {
 console.log(automaticInsertion())
 
 console.log('------------AUTOMATIC SEMI COLON INSERTION ENDS------------');
+
+console.log('------------CLOSURES START------------');
+
+function createGreet(whatToSay) {
+    return (name) => {
+        console.log(whatToSay + ' ' + name);
+    };
+}
+
+createGreet('Well hello there')('Bob');
+
+console.log('------------CLOSURES END------------');

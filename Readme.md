@@ -165,3 +165,12 @@ For example: `return` gets a semicolon if you enter a new line after writing it.
 calling it where you created it. `function(name) {console.log('Hello ' + name);}()`
 This is useful with frameworks, as you'd make sure that your code doesn't accidentally
 set your variables on the global object, thus avoiding accidental collisions.
+
+**Closure** - a surrounding function returns a function. When it's executed, then
+its execution context is created. Within that execution context memory space is 
+given for variables and such. The function finishes and the context is popped
+off the stack. Its variables stay there until garbage collection gets them.
+However, the inner variable still has a reference to the parameters. Goes up
+the chain if it cannot find the variable declared on itself. So garbage collection
+does not clean the variables of the parent as a reference is still there for it.
+![diagram](closure.JPG)
