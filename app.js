@@ -196,4 +196,30 @@ function createGreet(whatToSay) {
 
 createGreet('Well hello there')('Bob');
 
+function buildFunctions() {
+    const arr = [];
+
+    // let is block scoped, so the same problem doesn't occur.
+    for (let i = 0; i < 3; i++) {
+        arr.push(function() {
+            console.log(i);
+        });
+    }
+
+    /* The fix with var would be to create an instantly invoked function
+    * for (var i = 0; i < 3; i++) {
+        arr.push((function(j) {
+            return function () {console.log(j); };
+        }(i)));
+    }
+    * */
+
+    return arr;
+}
+
+const fns = buildFunctions();
+fns[0]();
+fns[1]();
+fns[2]();
+
 console.log('------------CLOSURES END------------');

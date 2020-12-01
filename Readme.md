@@ -174,3 +174,13 @@ However, the inner variable still has a reference to the parameters. Goes up
 the chain if it cannot find the variable declared on itself. So garbage collection
 does not clean the variables of the parent as a reference is still there for it.
 ![diagram](closure.JPG)
+
+The context of the buildFunctions is popped off the stack, but the variables remain 
+in memory. The i has iterated to 3, so when the functions get called, they get
+called with 3, as that is the variable's value in memory. As there is no variable
+i in the function's scope chain, then it goes up the scope chain, where it sees the
+loop variable i that's been set to 3. When you invoke the function, then it'll
+say what's in the memory **right now**, not when it was created. However, this is
+only a problem in the case of var, as let and const are block scoped, so they'll
+each reference their own specific variable.
+![diagram](closure_2.JPG)
