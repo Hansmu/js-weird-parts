@@ -184,3 +184,15 @@ say what's in the memory **right now**, not when it was created. However, this i
 only a problem in the case of var, as let and const are block scoped, so they'll
 each reference their own specific variable.
 ![diagram](closure_2.JPG)
+
+**bind** - it's a method on the function object, with which you can define what
+the `this` variable refers to inside of the function. Additionally, can be used
+to bind certain input values to be constant.
+
+**call** - a method on the function object, can be used to call the method 
+similar to just `()`. However, you can define the `this` object when using call.
+Additionally, the second parameter is the parameters.
+
+**apply** - does the same thing as call, expect the second parameter has to be
+an array. This can be useful when you're using mathematically calculated parameters
+or other things like that. Can be used for function borrowing from another object.
