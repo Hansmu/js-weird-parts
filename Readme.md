@@ -196,3 +196,20 @@ Additionally, the second parameter is the parameters.
 **apply** - does the same thing as call, expect the second parameter has to be
 an array. This can be useful when you're using mathematically calculated parameters
 or other things like that. Can be used for function borrowing from another object.
+
+When you try to access a property on an object in JS, then it first looks for it
+on the object itself, if it cannot find it, then it goes into the prototype.
+A prototype exists on all objects, it's under the proto property, which is 
+a separate object that the original object has a reference to. A proto object
+points to another prototype. Each object can have its own prototype. Another
+object can also point to the same proto as the first object. You should never
+access the prototype property directly. It's under the `__proto__` property.
+`this` instead of a proto object refers to the original object.
+![diagram](prototype_chain.JPG)
+
+Everything in JS is either an object or a primitive. They all have a prototype,
+even primitives, except for the base object. All objects extend the base object. The function
+prototype is the default function object, but that also extends the default
+object. Same thing with arrays. An array extends the array default object, which
+extends the base object. Also the same thing with primitives. A primitive has
+its specific object, e.g. number, which also extends the base object.

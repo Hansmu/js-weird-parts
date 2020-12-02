@@ -223,3 +223,33 @@ fns[1]();
 fns[2]();
 
 console.log('------------CLOSURES END------------');
+
+console.log('--------------OOP START--------------');
+
+/* BAD PRACTICE, DO NOT EVER DO THIS*/
+const someone = {
+    firstName: 'Thomas',
+    lastName: 'Wayne'
+};
+
+const defaultSomeone = {
+    firstName: 'Default',
+    lastName: 'Default',
+    getFullName: function() {
+        return `${this.firstName} ${this.lastName}`;
+    }
+}
+
+const newSomeone = {
+    firstName: 'Bob'
+}
+
+someone.__proto__ = defaultSomeone;
+newSomeone.__proto__ = defaultSomeone;
+
+console.log(someone.getFullName())
+console.log(newSomeone.getFullName());
+
+/* END BAD PRACTICE, DO NOT EVER DO THIS*/
+
+console.log('--------------OOP END--------------');
