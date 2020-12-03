@@ -252,4 +252,30 @@ console.log(newSomeone.getFullName());
 
 /* END BAD PRACTICE, DO NOT EVER DO THIS*/
 
+function Person() {
+    this.firstName = 'John';
+    this.lastName = 'Doe';
+}
+
+// When you write `new`, then a new empty object is created, so essentially const john = {};
+// Then the function is called and its this reference will be pointing to the empty object.
+// So you could get similar results with creating a new object, then binding your method's this
+// To that newly created object and then setting the properties in that method.
+// As long as my method doesn't return anything, then the new object will return that empty object
+// It created. However, if you return something, then that will be the result of the call.
+const john = new Person();
+console.log('Created this object:', john);
+
+// The prototype property lives on the method for only when you're using a function as an object constructor.
+// The prototype property on the constructor method does not reference the prototype of the function, but the prototype of
+// any objects created from that method.
+// It's better to put methods on the prototype, as that way it only takes up a single spot in memory. If you put it on
+// the object constructor method, then each object will define its method object and keep it in memory. It's more efficient
+// to define the methods on the prototype.
+Person.prototype.getFullName = function() {
+    return `${this.firstName} ${this.lastName}`;
+};
+
+console.log(john.getFullName());
+
 console.log('--------------OOP END--------------');
