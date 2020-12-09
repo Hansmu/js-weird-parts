@@ -213,3 +213,13 @@ prototype is the default function object, but that also extends the default
 object. Same thing with arrays. An array extends the array default object, which
 extends the base object. Also the same thing with primitives. A primitive has
 its specific object, e.g. number, which also extends the base object.
+
+`for ... in` should never be used with arrays, even though it works. That's
+because arrays are objects and each array element is a named entry in the 
+array. However, if some common functionality gets added to the array prototype
+by a library, then iterating over it using `for ... in` will also pick up
+that property.
+
+`Object.create` can be used to extend an object. It creates a new object
+using an existing object as its base, so setting the __proto__ property.
+You can then overwrite the defaults as needed.

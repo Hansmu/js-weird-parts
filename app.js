@@ -278,4 +278,24 @@ Person.prototype.getFullName = function() {
 
 console.log(john.getFullName());
 
+// You can add common functions onto strings and such by adding a method to the prototype object.
+// Have to make sure that you aren't overwriting an existing method.
+String.prototype.isLengthGreaterThan = function(limit) {
+    return this.length > limit;
+}
+
+console.log("John".isLengthGreaterThan(3));
+
+const person = {
+    firstName: 'Default',
+    lastName: 'Default',
+    greet: function() {
+        console.log('Hi ' + this.firstName);
+    }
+};
+
+const thomas = Object.create(person);
+thomas.firstName = 'Bobbert';
+thomas.greet();
+
 console.log('--------------OOP END--------------');
