@@ -223,3 +223,8 @@ that property.
 `Object.create` can be used to extend an object. It creates a new object
 using an existing object as its base, so setting the __proto__ property.
 You can then overwrite the defaults as needed.
+
+`use strict` makes JS use additional rules to make sure you're using JS
+in a stricter, more correct way. It is implemented differently in different
+JS engines, so it might not be the best thing to rely on, but it can be
+useful.

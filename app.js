@@ -299,3 +299,21 @@ thomas.firstName = 'Bobbert';
 thomas.greet();
 
 console.log('--------------OOP END--------------');
+
+console.log('--------------STRICT START--------------');
+
+/* use strict doesn't always have to be at the start of the file, it can also be only inside of a function */
+function logNewPerson() {
+    'use strict';
+
+    var person2;
+    persom2 = {};
+    console.log(persom2);
+}
+
+var tomato;
+persom = {};
+console.log(persom);
+// logNewPerson();
+
+console.log('--------------STRICT END--------------');
